@@ -91,58 +91,6 @@ Right now, the project includes:
 
 It is still an experimental project, but it already works well as a learning platform and as a prototype for future compiler research ideas.
 
-# Project structure
-The codebase is organized into modules so each part of the compiler has its own responsibility.
-
-ai-compiler/
-│
-├── main.py
-├── cli.py
-├── requirements.txt
-├── README.md
-├── LICENSE
-│
-├── compiler/
-│   ├── frontend/
-│   │   ├── ast_to_ir.py
-│   │   ├── ir.py
-│   │   └── project_scanner.py
-│   │
-│   ├── optimizer/
-│   │   ├── optimizer_pipeline.py
-│   │   ├── constant_folding.py
-│   │   ├── vectorizer.py
-│   │   ├── loop_tiling.py
-│   │   └── loop_optimizer.py
-│   │
-│   ├── backends/
-│   │   ├── cpp_backend.py
-│   │   ├── rust_backend.py
-│   │   └── java_backend.py
-│   │
-│   ├── ai/
-│   │   ├── ai_optimizer.py
-│   │   ├── candidate_generator.py
-│   │   ├── explore_optimizations.py
-│   │   ├── feature_extractor.py
-│   │   ├── learning_engine.py
-│   │   └── auto_dataset_builder.py
-│   │
-│   ├── runtime/
-│   │   ├── runner.py
-│   │   └── auto_benchmark.py
-│   │
-│   └── analysis/
-│       ├── complexity_analyzer.py
-│       └── performance_report.py
-│
-└── generated/
-    ├── program.cpp
-    ├── src/main.rs
-    └── Program.java
-
-The exact structure may vary a little depending on your local version, but this is the overall architecture.
-
 # How it works
 1. Parsing Python:
 The compiler starts by reading a Python file and building its AST using Python’s built-in ast module.
